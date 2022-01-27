@@ -1,0 +1,87 @@
+.header{
+  display: flex;
+  background-color: #8EDCE6;
+  color: #725E54;
+  height: 50px;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 2px solid black;
+}
+
+.rightheader{
+  align-self: center;
+}
+
+* {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.bodycontainer{
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-evenly;
+}
+
+button{
+  font-weight: bold;
+}
+
+h1{
+  margin-top: 5px;
+  align-self: center;
+}
+
+a {
+  color: #443627;
+  text-decoration: none;
+}
+
+body{
+  background-color: #D5DCF9;
+}
+
+.rightheader{
+  padding: 10px;
+}
+
+.rightheader :first-child {
+  margin-right: 20px;
+}
+
+.loginForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 400px;
+  width: 400px;
+  background-color: #725E54;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 100px;
+  color: white;
+  gap: 20px;
+}
+
+.registerForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 400px;
+  width: 400px;
+  background-color: #725E54;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 100px;
+  color: white;
+  gap: 20px;
+}
+
+.allwrapper{
+  display: flex;
+  justify-content: space-evenly;
+}
