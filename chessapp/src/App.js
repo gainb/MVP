@@ -38,10 +38,8 @@ function Pubpage() {
   const searchHandler = () => {
     axios.get(`https://api.chess.com/pub/player/${searchedUser}`)
     .then(res => {
-      res.data.last_online = Date(res.data.last_online);
-      res.data.joined = Date(res.data.joined);
-      res.data.last_online = new Date(res.data.last_online);
-      res.data.joined = new Date(res.data.joined);
+      res.data.last_online = new Date(res.data.last_online * 1000);
+      res.data.joined = new Date(res.data.joined * 1000);
       setSearchedInfo(res.data);
     })
     .catch(err => {
@@ -72,6 +70,10 @@ function Pubpage() {
       <StatsSearch />
     </div>
   </div>
+  <div className='puzzle'>
+    <h2>Daily Puzzle</h2>
+    <iframe style={{width: 400, height: 480}} src="https://www.chess.com/daily_puzzle" frameBorder="0" title='puzzle'></iframe>
+  </div>
     </>
   )
 }
@@ -91,10 +93,8 @@ function Privpage() {
   const searchHandler = () => {
     axios.get(`https://api.chess.com/pub/player/${searchedUser}`)
     .then(res => {
-      res.data.last_online = Date(res.data.last_online);
-      res.data.joined = Date(res.data.joined);
-      res.data.last_online = new Date(res.data.last_online);
-      res.data.joined = new Date(res.data.joined);
+      res.data.last_online = new Date(res.data.last_online * 1000);
+      res.data.joined = new Date(res.data.joined * 1000);
       setSearchedInfo(res.data);
     })
     .catch(err => {
@@ -126,6 +126,10 @@ function Privpage() {
       <h2>Stats</h2>
       <StatsSearch />
     </div>
+  </div>
+  <div className='puzzle'>
+    <h2>Daily Puzzle</h2>
+    <iframe style={{width: 400, height: 480}} src="https://www.chess.com/daily_puzzle" frameBorder="0" title='puzzle'></iframe>
   </div>
     </>
   )

@@ -10,10 +10,8 @@ export default function Profile() {
   useEffect(() => {
     axios.get(`https://api.chess.com/pub/player/${sessionStorage.getItem('chessname')}`)
     .then(res => {
-      res.data.last_online = Date(res.data.last_online);
-      res.data.joined = Date(res.data.joined);
-      res.data.last_online = new Date(res.data.last_online);
-      res.data.joined = new Date(res.data.joined);
+      res.data.last_online = new Date(res.data.last_online * 1000);
+      res.data.joined = new Date(res.data.joined * 1000);
       setUserProfile(res.data);
     })
     .catch(err => {
@@ -42,6 +40,7 @@ export default function Profile() {
         <h2>Your Profile</h2>
         <div>
           {userProfile.avatar ? <img src={userProfile.avatar} alt='user avatar' id='searchedAvatar'/> : <i>No avatar</i>}
+          <p>{userProfile.name}</p>
           <p>Followers: {userProfile.followers}</p>
           <p>Last Seen: {userProfile.last_online.toLocaleString()}</p>
           <p>Joined: {userProfile.joined.toLocaleString()}</p>
